@@ -1,7 +1,7 @@
 {
   "name": "navigate.games",
   "version": "1.0.0",
-  "main": "dst/server.js",
+  "main": "dist/server.js",
   "scripts": {
     "dev": "nodemon src/server.ts",
     "build": "tsc",
