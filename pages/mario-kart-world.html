@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Game Map Viewer</title>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+
+		<style>
+			/* * Leaflet overrides */
+			.leaflet-container {
+				background: #3d7cb6;
+				outline: 0;
+			}
+
+			.leaflet-popup-content-wrapper {
+				background: #1E1E1E;
+			}
+
+			.leaflet-popup-tip {
+				background: #1E1E1E;
+			}
+		</style>
+
+		<style>
+			/* * General page styles */
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+				background: #1a1a1a;
+				color: white;
+				overflow: hidden;
+			}
+
+			#map {
+				width: 100vw;
+				height: 100vh;
+			}
+		</style>
+
+		<style>
+			/* * Info panel styles */
+			.info-panel {
+				position: absolute;
+				top: 20px;
+				right: 20px;
+				width: 600px;
+				max-width: calc(100vw - 40px);
+				background: #1E1E1E;
+				border-radius: 12px;
+				padding: 20px;
+				border: 1px solid #444;
+				box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+				backdrop-filter: blur(10px);
+				transform: translateX(620px);
+				transition: transform 0.3s ease;
+				z-index: 1000;
+			}
+
+			.info-panel.active {
+				transform: translateX(0);
+			}
+
+			.info-panel h3 {
+				color: #64B5F6;
+				margin-bottom: 10px;
+				font-size: 18px;
+			}
+
+			.poi-image {
+				width: 100%;
+				height: 300px;
+				object-fit: cover;
+				border-radius: 8px;
+				margin-bottom: 10px;
+			}
+
+			.poi-video {
+				width: 100%;
+				height: 300px;
+				border-radius: 8px;
+				margin: 10px 0;
+				background: #000;
+			}
+
+			.completion-checkbox {
+				display: flex;
+				align-items: center;
+				gap: 8px;
+				margin: 15px 0;
+				padding: 10px;
+				background: rgba(255, 255, 255, 0.1);
+				border-radius: 8px;
+				cursor: pointer;
+				transition: background 0.2s ease;
+			}
+
+			.completion-checkbox:hover {
+				background: rgba(255, 255, 255, 0.15);
+			}
+
+			.completion-checkbox input[type="checkbox"] {
+				width: 18px;
+				height: 18px;
+				cursor: pointer;
+			}
+
+			.completion-checkbox label {
+				cursor: pointer;
+				font-weight: 500;
+			}
+
+			.video-link {
+				display: inline-block;
+				margin-top: 10px;
+				padding: 8px 16px;
+				background: #FF4444;
+				color: white;
+				text-decoration: none;
+				border-radius: 6px;
+				font-size: 14px;
+				transition: background 0.2s ease;
+			}
+
+			.video-link:hover {
+				background: #CC3333;
+			}
+
+			.close-btn {
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				background: none;
+				border: none;
+				color: #999;
+				cursor: pointer;
+				font-size: 18px;
+			}
+		</style>
+
+		<style>
+			/* * Completion stats styles */
+			.completion-stats {
+				position: absolute;
+				bottom: 20px;
+				left: 20px;
+				background: #1E1E1E;
+				border-radius: 8px;
+				padding: 15px;
+				border: 1px solid #444;
+				z-index: 1000;
+				min-width: 200px;
+			}
+
+			.stat-item {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				margin-bottom: 8px;
+				font-size: 14px;
+			}
+
+			.stat-item:last-child {
+				margin-bottom: 0;
+			}
+
+			.stat-item#github {
+				border-top: 1px solid #444;
+				padding-top: 8px;
+				margin-top: 8px;
+			}
+
+			.stat-item#github a {
+				color: #64B5F6;
+				text-decoration: none;
+				font-size: 12px;
+				display: flex;
+				align-items: center;
+				gap: 6px;
+			}
+
+			.stat-item#github img {
+				width: 16px;
+				height: 16px;
+				filter: invert(1);
+			}
+
+			.stat-label {
+				display: flex;
+				align-items: center;
+				gap: 8px;
+			}
+
+			.stat-icon {
+				width: 20px;
+				height: 20px;
+				border-radius: 4px;
+				background-size: cover;
+				background-position: center;
+			}
+
+			.stat-icon.mission {
+				background-image: url('/assets/images/icons/p-switch.png');
+			}
+
+			.stat-icon.panel {
+				background-image: url('/assets/images/icons/question-panel.png');
+			}
+
+			.stat-icon.medallion {
+				background-image: url('/assets/images/icons/peach-medallion.png');
+			}
+
+			.stat-count {
+				font-weight: bold;
+				color: #4CAF50;
+			}
+		</style>
+
+		<style>
+			/* * New POI suggestion styles */
+			.poi-selector-popup {
+				font-family: Arial, sans-serif;
+				text-align: center;
+				min-width: 250px;
+			}
+
+			.popup-header h3 {
+				margin: 0 0 8px 0;
+				color: white;
+			}
+
+			.poi-type-grid {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 10px;
+				margin-bottom: 15px;
+			}
+
+			.poi-type-card {
+				background: rgba(255, 255, 255, 0.1);
+				border: 2px solid #8e8e8e;
+				border-radius: 8px;
+				padding: 15px 10px;
+				cursor: pointer;
+				transition: all 0.2s ease;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 5px;
+			}
+
+			.poi-type-card:hover {
+				background: #616161;
+				border-color: #a5a5a5;
+				transform: translateY(-2px);
+			}
+
+			.poi-icon {
+				width: 32px;
+				height: 32px;
+				border-radius: 4px;
+				background-size: cover;
+				background-position: center;
+			}
+
+			.poi-icon.mission {
+				background-image: url('/assets/images/icons/p-switch.png');
+			}
+
+			.poi-icon.panel {
+				background-image: url('/assets/images/icons/question-panel.png');
+			}
+
+			.poi-icon.medallion {
+				background-image: url('/assets/images/icons/peach-medallion.png');
+			}
+		</style>
+	</head>
+	<body>
+		<div id="map"></div>
+
+		<div class="info-panel" id="infoPanel">
+			<button class="close-btn" id="closePanel">×</button>
+			<div id="panelContent"></div>
+		</div>
+
+		<div class="completion-stats" id="completionStats">
+			<div class="stat-item">
+				<div class="stat-label">
+					<div class="stat-icon mission"></div>
+					<span>Missions</span>
+				</div>
+				<span class="stat-count" id="missionCount">0/0</span>
+			</div>
+			<div class="stat-item">
+				<div class="stat-label">
+					<div class="stat-icon panel"></div>
+					<span>Question Panels</span>
+				</div>
+				<span class="stat-count" id="panelsCount">0/0</span>
+			</div>
+			<div class="stat-item">
+				<div class="stat-label">
+					<div class="stat-icon medallion"></div>
+					<span>Peach Medallions</span>
+				</div>
+				<span class="stat-count" id="medallionsCount">0/0</span>
+			</div>
+			<div class="stat-item" id="github">
+				<a href="https://github.com/jonbarrow/navigate.games" target="_blank">
+					<img src="/assets/images/icons/github.png" alt="GitHub">
+					View on GitHub
+				</a>
+			</div>
+		</div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+
+		<script>
+			// TODO - Don't hard-code this? It's the size of `assets/images/map/base.webp`
+			const mapImageWidth = 2339;
+			const mapImageHeight = 2674;
+
+			// TODO - Add yoshi food locations
+			// TODO - Add coin stack locations
+			const pois = {
+				missions: [],
+				panels: [],
+				medallions: []
+			};
+
+			async function loadMarkerData() {
+				const [ missionsResponse, panelsResponse, medallionsResponse ] = await Promise.all([
+					fetch('/assets/data/pois/mario-kart-world/missions.json'),
+					fetch('/assets/data/pois/mario-kart-world/panels.json'),
+					fetch('/assets/data/pois/mario-kart-world/medallions.json')
+				]);
+
+				pois.missions = await missionsResponse.json();
+				pois.panels = await panelsResponse.json();
+				pois.medallions = await medallionsResponse.json();
+			}
+		</script>
+
+		<script>
+			function createGitHubIssue(type, lat, lng) {
+				const labels = [ 'poi-request', type.replace(/ /g, '-'), 'unverified' ].join(',');
+				const issueTitle = `[POI Request] POI_NAME_HERE`;
+				let issueBody = '## New POI Request\n';
+				issueBody += '\n';
+				issueBody += `- Type: ${type}\n`;
+				issueBody += '- Name (if applicable):\n';
+				issueBody += '- Description (if applicable):\n';
+				issueBody += '- Reward (if applicable):\n';
+				issueBody += '\t- Type:\n';
+				issueBody += '\t- Name:\n';
+				issueBody += '\t- Image URL:\n';
+				issueBody += '- Image URL:\n';
+				issueBody += '- Image URL:\n';
+				issueBody += '- Video URL:\n';
+				issueBody += `- Coordinates: <a href="http://navigate.games/mario-kart-world?lat=${lat}&long=${lng}" target="_blank">[${lat}, ${lng}]</a>\n`;
+				issueBody += '\n';
+				issueBody += '**Additional Information:**\n';
+				issueBody += '<!-- Add any additional details about this POI -->\n';
+				issueBody += '\n';
+				issueBody += '\n';
+				issueBody += '*This issue was automatically generated from the map interface*';
+
+				window.open(`https://github.com/jonbarrow/navigate.games/issues/new?title=${encodeURIComponent(issueTitle)}&body=${encodeURIComponent(issueBody)}&labels=${labels}`, '_blank');
+			}
+
+			function getPreviewCoordinates() {
+				const urlParams = new URLSearchParams(window.location.search);
+
+				return {
+					lat: parseFloat(urlParams.get('lat')),
+					lng: parseFloat(urlParams.get('long'))
+				};
+			}
+
+			const iconData = {
+				p_switch: {
+					url: '/assets/images/icons/p-switch.png',
+					width: 64,
+					height: 56,
+					down_scale: 2
+				},
+				question_panel: {
+					url: '/assets/images/icons/question-panel.png',
+					width: 60,
+					height: 60,
+					down_scale: 2
+				},
+				peach_medallion: {
+					url: '/assets/images/icons/peach-medallion.png',
+					width: 63,
+					height: 69,
+					down_scale: 2
+				}
+			};
+
+			const infoPanel = document.getElementById('infoPanel');
+			const panelContent = document.getElementById('panelContent');
+
+			const missionLayer = L.layerGroup();
+			const questionPanelLayer = L.layerGroup();
+			const peachMedallionLayer = L.layerGroup();
+			const markers = {};
+			const completed = {
+				missions: 0,
+				panels: 0,
+				medallions: 0
+			};
+			const bounds = [[0, 0], [mapImageWidth, mapImageHeight]];
+			const map = L.map('map', {
+				crs: L.CRS.Simple,
+				minZoom: -2,
+				maxZoom: 2
+			});
+
+			L.imageOverlay('/assets/images/map/base.webp', bounds).addTo(map);
+			L.control.layers(null, {
+				'Missions': missionLayer,
+				'? Panels': questionPanelLayer,
+				'Peach Medallions': peachMedallionLayer,
+			}).addTo(map);
+
+			map.fitBounds(bounds);
+			map.on('click', (e) => {
+				const { lat, lng } = e.latlng;
+				const popupContent = `
+					<div class="poi-selector-popup">
+						<div class="popup-header">
+							<h3>Suggest New POI</h3>
+							<h3>[${lat}, ${lng}]</h3>
+						</div>
+						<div class="poi-type-grid">
+							<button class="poi-type-card" data-type="mission" data-lat="${lat}" data-lng="${lng}">
+								<div class="poi-icon mission"></div>
+							</button>
+							<button class="poi-type-card" data-type="question panel" data-lat="${lat}" data-lng="${lng}">
+								<div class="poi-icon panel"></div>
+							</button>
+							<button class="poi-type-card" data-type="peach medallion" data-lat="${lat}" data-lng="${lng}">
+								<div class="poi-icon medallion"></div>
+							</button>
+						</div>
+					</div>
+				`;
+
+				const popup = L.popup()
+					.setLatLng(e.latlng)
+					.setContent(popupContent)
+					.openOn(map);
+
+				document.querySelectorAll('.poi-type-card').forEach(btn => {
+					btn.addEventListener('click', () => {
+						const type = btn.getAttribute('data-type');
+						const lat = btn.getAttribute('data-lat');
+						const lng = btn.getAttribute('data-lng');
+
+						createGitHubIssue(type, lat, lng);
+						map.closePopup();
+					});
+				});
+			});
+
+			const previewCoordinates = getPreviewCoordinates();
+
+			if (!isNaN(previewCoordinates.lat) && !isNaN(previewCoordinates.lng)) {
+				map.setView([previewCoordinates.lat, previewCoordinates.lng], 10);
+
+				L.circle([previewCoordinates.lat, previewCoordinates.lng], {
+					color: 'red',
+					fillColor: '#f03',
+					fillOpacity: 0.5,
+					radius: 5
+				}).addTo(map);
+			}
+
+			function createMarker(poi, type) {
+				const layer = type === 'p_switch' ? missionLayer
+					: type === 'question_panel' ? questionPanelLayer
+					: peachMedallionLayer;
+				const icon = iconData[type];
+				const marker = L.marker(poi.coordinates, {
+					icon:
+						L.icon({
+							iconUrl: icon.url,
+							iconSize: [icon.width/icon.down_scale, icon.height/icon.down_scale],
+							iconAnchor: [(icon.width/icon.down_scale)/2, (icon.height/icon.down_scale)/2]
+						})
+					}
+				).addTo(layer);
+
+				marker.on('click', () => {
+					showMarkerInfo(poi, type);
+				});
+
+				return marker;
+			}
+
+			function addMarkers() {
+				pois.missions.forEach(poi => {
+					markers[poi.id] = createMarker(poi, 'p_switch');
+				});
+
+				pois.panels.forEach(poi => {
+					markers[poi.id] = createMarker(poi, 'question_panel');
+				});
+
+				pois.medallions.forEach(poi => {
+					markers[poi.id] = createMarker(poi, 'peach_medallion');
+				});
+			}
+
+			function initializeEvents() {
+				document.getElementById('closePanel').addEventListener('click', () => {
+					closeMarkerInfo();
+				});
+			}
+
+			function loadCompletionStatus() {
+				pois.missions.forEach(poi => {
+					const isCompleted = localStorage.getItem(`poi_${poi.id}`) === 'true';
+					if (isCompleted) {
+						updateMarkerAppearance(poi, true);
+						completed.missions += 1;
+					}
+				});
+
+				pois.panels.forEach(poi => {
+					const isCompleted = localStorage.getItem(`poi_${poi.id}`) === 'true';
+					if (isCompleted) {
+						updateMarkerAppearance(poi, true);
+						completed.panels += 1;
+					}
+				});
+
+				pois.medallions.forEach(poi => {
+					const isCompleted = localStorage.getItem(`poi_${poi.id}`) === 'true';
+					if (isCompleted) {
+						updateMarkerAppearance(poi, true);
+						completed.medallions += 1;
+					}
+				});
+
+				updateCompletedCounts();
+			}
+
+			function updateCompletedCounts() {
+				document.getElementById('missionCount').innerHTML = `${completed.missions}/${pois.missions.length}`;
+				document.getElementById('panelsCount').innerHTML = `${completed.panels}/${pois.panels.length}`;
+				document.getElementById('medallionsCount').innerHTML = `${completed.medallions}/${pois.medallions.length}`;
+			}
+
+			function updateMarkerCompletion(poi, isCompleted, type) {
+				localStorage.setItem(`poi_${poi.id}`, isCompleted.toString());
+
+				// TODO - This sucks, drilling this value down so deep and mapping values sucks
+				const key = type === 'p_switch' ? 'missions'
+					: type === 'question_panel' ? 'panels'
+					: 'medallions';
+
+				completed[key] += isCompleted ? 1 : -1
+
+				updateMarkerAppearance(poi, isCompleted);
+				updateCompletedCounts();
+			}
+
+			function updateMarkerAppearance(poi, isCompleted) {
+				const marker = markers[poi.id];
+
+				if (isCompleted) {
+					marker.setOpacity(0.5);
+				} else {
+					marker.setOpacity(1);
+				}
+			}
+
+			function showMarkerInfo(poi, type) {
+				const isCompleted = localStorage.getItem(`poi_${poi.id}`) === 'true';
+
+				let content = `<h3>${poi.name}</h3>`; // TODO - Recolor this based on type
+
+				if (poi.image) {
+					content += `<img src="${poi.image}" alt="${poi.id}" class="poi-image" onerror="style.display='none'">`;
+				}
+
+				if (poi.description) {
+					content += `<p>${poi.description}</p>`;
+				}
+
+				content += `
+					<div class="completion-checkbox" data-poi-id="${poi.id}">
+						<input type="checkbox" id="completed-${poi.id}" ${isCompleted ? 'checked' : ''}>
+						<label for="completed-${poi.id}">Mark as completed</label>
+					</div>
+				`;
+
+				if (poi.video) {
+					if (!poi.video.startsWith('/assets/videos/')) {
+						content += `<a href="${poi.video}" target="_blank" class="video-link">Watch Guide Video</a>`;
+					} else {
+						content += `
+							<video class="poi-video" controls>
+								<source src="${poi.video}" type="video/mp4">
+								<source src="${poi.video}" type="video/mov">
+								<source src="${poi.video}" type="video/quicktime">
+								Your browser does not support the video tag.
+							</video>
+						`;
+					}
+				}
+
+				// TODO - Show reward information
+
+				panelContent.innerHTML = content;
+				infoPanel.classList.add('active');
+
+				document.getElementById(`completed-${poi.id}`).addEventListener('change', function() {
+					updateMarkerCompletion(poi, this.checked, type);
+				});
+			}
+
+			function closeMarkerInfo() {
+				infoPanel.classList.remove('active');
+			}
+
+			window.addEventListener('DOMContentLoaded', async () => {
+				await loadMarkerData();
+				addMarkers();
+				initializeEvents();
+				loadCompletionStatus();
+
+				missionLayer.addTo(map);
+				questionPanelLayer.addTo(map);
+				peachMedallionLayer.addTo(map);
+			});
+		</script>
+	</body>
+</html>

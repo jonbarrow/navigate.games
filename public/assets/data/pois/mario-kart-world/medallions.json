@@ -1,0 +1,64 @@
+[
+	{
+		"id": "6630f9ae-db76-4376-b041-a23d94bd2ea0",
+		"name": "Peach Medallion",
+		"image": "/assets/images/medallions/6630f9ae-db76-4376-b041-a23d94bd2ea0.jpg",
+		"video": "/assets/videos/medallions/6630f9ae-db76-4376-b041-a23d94bd2ea0.mov",
+		"coordinates": [1082, 1113]
+	},
+	{
+		"id": "fc07ec81-7f83-4f3a-b19c-b587fc101932",
+		"name": "Peach Medallion",
+		"image": "/assets/images/medallions/fc07ec81-7f83-4f3a-b19c-b587fc101932.jpg",
+		"video": "/assets/videos/medallions/fc07ec81-7f83-4f3a-b19c-b587fc101932.mov",
+		"coordinates": [1518.5, 1422]
+	},
+	{
+		"id": "720985d8-e20b-4a74-9f91-dd191ceae4b8",
+		"name": "Peach Medallion",
+		"image": "/assets/images/medallions/720985d8-e20b-4a74-9f91-dd191ceae4b8.jpg",
+		"video": "/assets/videos/medallions/720985d8-e20b-4a74-9f91-dd191ceae4b8.mov",
+		"coordinates": [1139, 713]
+	},
+	{
+		"id": "32b2eeb1-7f1d-4cb6-b772-c6a232ff38ec",
+		"name": "Peach Medallion",
+		"image": "/assets/images/medallions/32b2eeb1-7f1d-4cb6-b772-c6a232ff38ec.jpg",
+		"coordinates": [1288, 709]
+	},
+	{
+		"id": "eab8370e-3c0b-4fa8-8a89-1f67b9fa4b0b",
+		"name": "Peach Medallion",
+		"image": "/assets/images/medallions/eab8370e-3c0b-4fa8-8a89-1f67b9fa4b0b.jpg",
+		"video": "/assets/videos/medallions/eab8370e-3c0b-4fa8-8a89-1f67b9fa4b0b.mov",
+		"coordinates": [390, 922]
+	},
+	{
+		"id": "211a5962-4918-4f43-8d2c-f88b8ee9e345",
+		"name": "Peach Medallion",
+		"image": "/assets/images/medallions/211a5962-4918-4f43-8d2c-f88b8ee9e345.jpg",
+		"video": "/assets/videos/medallions/211a5962-4918-4f43-8d2c-f88b8ee9e345.mov",
+		"coordinates": [497, 873]
+	},
+	{
+		"id": "430e59d9-2c37-462d-b317-c6f03addb2c6",
+		"name": "Peach Medallion",
+		"image": "/assets/images/medallions/430e59d9-2c37-462d-b317-c6f03addb2c6.jpg",
+		"video": "/assets/videos/medallions/430e59d9-2c37-462d-b317-c6f03addb2c6.mov",
+		"coordinates": [610.5, 908]
+	},
+	{
+		"id": "01d15a71-9746-4f46-8a08-3dd6a93e6437",
+		"name": "Peach Medallion",
+		"image": "/assets/images/medallions/01d15a71-9746-4f46-8a08-3dd6a93e6437.jpg",
+		"video": "/assets/videos/medallions/01d15a71-9746-4f46-8a08-3dd6a93e6437.mov",
+		"coordinates": [674.5, 868]
+	},
+	{
+		"id": "c207515b-3e68-4936-8efd-b9926575d0a1",
+		"name": "Peach Medallion",
+		"image": "/assets/images/medallions/c207515b-3e68-4936-8efd-b9926575d0a1.jpg",
+		"video": "/assets/videos/medallions/c207515b-3e68-4936-8efd-b9926575d0a1.mov",
+		"coordinates": [1554.5, 1093]
+	}
+]

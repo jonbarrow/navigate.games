@@ -1,0 +1,184 @@
+[
+	{
+		"id": "122ef6e7-5d57-434f-9cf3-14d5195239fa",
+		"name": "Ramp through rings and over flames!",
+		"description": "",
+		"image": "/assets/images/missions/122ef6e7-5d57-434f-9cf3-14d5195239fa.jpg",
+		"coordinates": [1344, 733]
+	},
+	{
+		"id": "0cdd29ed-9928-43db-bbe5-435aa9368f54",
+		"name": "Follow the rings along the rooftops!",
+		"description": "",
+		"image": "/assets/images/missions/0cdd29ed-9928-43db-bbe5-435aa9368f54.jpg",
+		"coordinates": [1305, 705.5]
+	},
+	{
+		"id": "b99b0967-d86f-4c9a-b7c1-a416b75e98c7",
+		"name": "Take the offraod shortcut to Mario Bros. Circuit!",
+		"description": "",
+		"image": "/assets/images/missions/b99b0967-d86f-4c9a-b7c1-a416b75e98c7.jpg",
+		"coordinates": [1072.75, 709.75]
+	},
+	{
+		"id": "c7ab67cd-3dba-4c76-8079-f914acfcd057",
+		"name": "Race over ramps and beams to reach the goal!",
+		"description": "",
+		"image": "/assets/images/missions/c7ab67cd-3dba-4c76-8079-f914acfcd057.jpg",
+		"coordinates": [1109, 721]
+	},
+	{
+		"id": "16ff884f-4ac3-458a-ad53-a54e0094a2e5",
+		"name": "Collect blue coins spanning the bridge!",
+		"description": "",
+		"image": "/assets/images/missions/16ff884f-4ac3-458a-ad53-a54e0094a2e5.jpg",
+		"coordinates": [1074.25, 806.5]
+	},
+	{
+		"id": "e4dc5b63-89c9-44e1-be34-70bc85cab164",
+		"name": "Race around a tribute to Choco Island 2!",
+		"description": "",
+		"image": "/assets/images/missions/e4dc5b63-89c9-44e1-be34-70bc85cab164.jpg",
+		"coordinates": [1070, 895]
+	},
+	{
+		"id": "a8b5e1d3-5ddb-4e4a-85fc-1a01ac425e2a",
+		"name": "Dash, dash, dash through the thick chocolate!",
+		"description": "",
+		"image": "/assets/images/missions/a8b5e1d3-5ddb-4e4a-85fc-1a01ac425e2a.jpg",
+		"coordinates": [1179, 985.5]
+	},
+	{
+		"id": "06c9360a-bd07-4ef0-95e4-32a5f2f5a781",
+		"name": "Take a tour of Toad's Factory!",
+		"description": "",
+		"image": "/assets/images/missions/06c9360a-bd07-4ef0-95e4-32a5f2f5a781.jpg",
+		"coordinates": [1542, 971]
+	},
+	{
+		"id": "7490d77f-e26d-4dc8-a640-8246726d4042",
+		"name": "Race up to the very top of the crane!",
+		"description": "",
+		"image": "/assets/images/missions/7490d77f-e26d-4dc8-a640-8246726d4042.jpg",
+		"coordinates": [1541, 999]
+	},
+	{
+		"id": "ee2033e4-af85-4dd1-8191-4d6ffb7941f8",
+		"name": "Prove yourself in a SPECIAL test of skill #2!",
+		"description": "",
+		"image": "/assets/images/missions/ee2033e4-af85-4dd1-8191-4d6ffb7941f8.jpg",
+		"coordinates": [1490, 1083.5]
+	},
+	{
+		"id": "3fdf91fe-44e2-429d-aead-99f055490dce",
+		"name": "Forgive the messy nature of prototype testing!",
+		"description": "",
+		"image": "/assets/images/missions/3fdf91fe-44e2-429d-aead-99f055490dce.jpg",
+		"coordinates": [1517, 1020]
+	},
+	{
+		"id": "80b17047-634a-49c5-a4a6-c77d4d2dfcb1",
+		"name": "Note the timing of your jumps!",
+		"description": "",
+		"image": "/assets/images/missions/80b17047-634a-49c5-a4a6-c77d4d2dfcb1.jpg",
+		"coordinates": [1437.75, 1043]
+	},
+	{
+		"id": "2aa977ea-59f6-4a90-bf5e-3b8daba72e45",
+		"name": "Snag a couple snacks in a race around the Big Donut!",
+		"description": "",
+		"image": "/assets/images/missions/2aa977ea-59f6-4a90-bf5e-3b8daba72e45.jpg",
+		"coordinates": [1562.75, 809.5]
+	},
+	{
+		"id": "955e61f8-01ff-4e8d-9fbe-2836cd5a93d2",
+		"name": "Blitz past Bullies while gathering blue coins!",
+		"description": "",
+		"image": "/assets/images/missions/955e61f8-01ff-4e8d-9fbe-2836cd5a93d2.jpg",
+		"coordinates": [1621.25, 791.5]
+	},
+	{
+		"id": "7f1c921f-b8d2-4296-a3a2-b6a01ab96818",
+		"name": "Zip up the left-hand path, Mushroom-free!",
+		"description": "",
+		"image": "/assets/images/missions/7f1c921f-b8d2-4296-a3a2-b6a01ab96818.jpg",
+		"coordinates": [1719, 746.5]
+	},
+	{
+		"id": "74a1e569-f347-4312-9e0b-1eae8f8fc84b",
+		"name": "Use Mushrooms to zip up the right-hand path!",
+		"description": "",
+		"image": "/assets/images/missions/74a1e569-f347-4312-9e0b-1eae8f8fc84b.jpg",
+		"coordinates": [1725.75, 781.75]
+	},
+	{
+		"id": "669618f3-677c-45c7-ac9d-3a6dee9886f0",
+		"name": "Bullet Bill through the fiery barrage!",
+		"description": "",
+		"image": "/assets/images/missions/669618f3-677c-45c7-ac9d-3a6dee9886f0.jpg",
+		"coordinates": [1784, 763.5]
+	},
+	{
+		"id": "321c3d21-a529-4a5e-8c3d-721d10a25852",
+		"name": "Slide by waves of fireballs! Don't get singed!",
+		"description": "",
+		"image": "/assets/images/missions/321c3d21-a529-4a5e-8c3d-721d10a25852.jpg",
+		"coordinates": [1716.5, 724.75]
+	},
+	{
+		"id": "69ef0270-88d1-4e11-b643-df21a202503a",
+		"name": "Gather blue coins along the narrow road!",
+		"description": "",
+		"image": "/assets/images/missions/69ef0270-88d1-4e11-b643-df21a202503a.jpg",
+		"coordinates": [1625.5, 706]
+	},
+	{
+		"id": "3cf6bc3c-f06b-47ad-af8a-a3a7533c2ee9",
+		"name": "Tear up the track with trick after trick!",
+		"description": "",
+		"image": "/assets/images/missions/3cf6bc3c-f06b-47ad-af8a-a3a7533c2ee9.jpg",
+		"coordinates": [1660, 781.5]
+	},
+	{
+		"id": "5861cafa-aeb5-407c-aa73-67d0e3f19479",
+		"name": "Navigate a path of pipes and rings!",
+		"description": "",
+		"image": "/assets/images/missions/5861cafa-aeb5-407c-aa73-67d0e3f19479.jpg",
+		"coordinates": [1671, 842]
+	},
+	{
+		"id": "836ffdbc-2e3b-4d8c-aa9a-5f04b3e79b10",
+		"name": "Fly safely above the lake of lava!",
+		"description": "",
+		"image": "/assets/images/missions/836ffdbc-2e3b-4d8c-aa9a-5f04b3e79b10.jpg",
+		"coordinates": [1653, 829]
+	},
+	{
+		"id": "5cc9ddbd-9b55-4e13-983f-6d7ecacb75e4",
+		"name": "Collect blue coins in the hot springs!",
+		"description": "",
+		"image": "/assets/images/missions/5cc9ddbd-9b55-4e13-983f-6d7ecacb75e4.jpg",
+		"coordinates": [1721, 979]
+	},
+	{
+		"id": "6db25d2b-596c-4d39-b2d4-cc9964107368",
+		"name": "Zip by Fish Bones on the way to the hot springs!",
+		"description": "",
+		"image": "/assets/images/missions/6db25d2b-596c-4d39-b2d4-cc9964107368.jpg",
+		"coordinates": [1669, 1144]
+	},
+	{
+		"id": "8bb7924b-ef68-4e31-a9ae-f8fb55a3c720",
+		"name": "Cut across traffic and grab the blue coins!",
+		"description": "",
+		"image": "/assets/images/missions/8bb7924b-ef68-4e31-a9ae-f8fb55a3c720.jpg",
+		"coordinates": [1606, 1130.5]
+	},
+	{
+		"id": "02290580-1dde-4bd9-a49a-34cfef02f392",
+		"name": "Go on a wilderness adventure and reach the goal!",
+		"description": "",
+		"image": "/assets/images/missions/02290580-1dde-4bd9-a49a-34cfef02f392.jpg",
+		"coordinates": [1687.5, 1212.5]
+	}
+]
