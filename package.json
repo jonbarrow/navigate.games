@@ -3,16 +3,20 @@
   "version": "1.0.0",
   "main": "dist/server.js",
   "scripts": {
+		"lint": "eslint .",
+    "lint:fix": "eslint --fix .",
     "dev": "nodemon src/server.ts",
-    "build": "tsc",
+    "build": "npm run lint && tsc",
     "start": "node dist/server.js"
   },
   "author": "",
   "license": "AGPL-3.0-only",
   "description": "",
   "devDependencies": {
+    "@pretendonetwork/eslint-config": "^0.0.8",
     "@types/express": "^5.0.3",
     "@types/node": "^24.0.0",
+    "eslint": "^9.28.0",
     "nodemon": "^3.1.10",
     "typescript": "^5.8.3"
   },
