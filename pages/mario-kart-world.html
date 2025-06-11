@@ -351,7 +351,7 @@
 
 		<script>
 			function createGitHubIssue(type, lat, lng) {
-				const labels = [ 'poi-request', type.replace(/ /g, '-'), 'unverified' ].join(',');
+				const labels = [ 'poi-request', type.replace(/ /g, '-'), 'unverified-poi' ].join(',');
 				const issueTitle = `[POI Request] POI_NAME_HERE`;
 				let issueBody = '## New POI Request\n';
 				issueBody += '\n';
