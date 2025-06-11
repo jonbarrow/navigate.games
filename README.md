@@ -13,6 +13,15 @@ Open source interactive game map viewer for Mario Kart World
 	- A description of what the POI task is (if applicable)
 	- POI reward information (if applicable, WIP)
 
+## Contributing (general)
+
+The same general contribution styles/guidelines as found in the Pretendo Network project are in use here (https://github.com/PretendoNetwork/.github/tree/master/.github). As a small general overview:
+
+- Please keep commits focused. For example, if adding multiple POIs please do not create multiple POIs in a single commit
+- We use the [Conventional Commits](https://conventionalcommits.org) commit message syntax
+- Please keep PRs focused. Multiple tasks should be in multiple PRs. Adding multiple POIs in a single PR is fine, within reason, however changes like style updates, bug fixes, POI updates, etc. should all be in different commits
+- Please make an issue request if you would like to work on a new feature. While PRs can be made regardless, and may be accepted, opening an issue to discuss a feature request before working on it saves time/effort on both ends and increases the chances of a feature being merged
+
 ## Contributing POIs (points of interest)
 
 To contribute POIs, click anywhere in the world map and select a POI type. If the type is not listed, pick any type. Fill out the resulting GitHub issue template, changing what needs to be changed, and submit. If possible, please also provide a high-resolution screenshot of the POI in the game world where the POI is clearly visible, as well as a high-quality video showing how to obtain the POI if it is a collectable or how to complete the task if the POI is a mission, such as through the Switch 2's built in screenshot/recording feature. If the POI is a mission, please also include a description of what the task is. If a POI gives an extra reward, such as a sticker, please also include this information as well if possible.
