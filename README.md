@@ -1,4 +1,4 @@
-# navigate.games
+# https://navigate.games
 
 Open source interactive game map viewer for Mario Kart World
 
