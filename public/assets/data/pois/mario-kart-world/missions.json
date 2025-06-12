@@ -180,5 +180,12 @@
 		"description": "",
 		"image": "/assets/images/missions/02290580-1dde-4bd9-a49a-34cfef02f392.jpg",
 		"coordinates": [1687.5, 1212.5]
+	},
+	{
+		"id": "4710c794-4df1-41be-9922-f71ab629df9d",
+		"name": "Slip by line after line of Rocky Wrenches!",
+		"description": "",
+		"image": "/assets/images/missions/4710c794-4df1-41be-9922-f71ab629df9d.jpg",
+		"coordinates": [1567, 427.5]
 	}
 ]
