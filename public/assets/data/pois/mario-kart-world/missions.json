@@ -194,5 +194,13 @@
 		"description": "",
 		"image": "/assets/images/missions/91b09955-9116-40b9-bcde-456a7736baf2.jpg",
 		"coordinates": [1567, 427.5]
+	},
+	{
+		"id": "2ea8ade6-36d1-4147-8edf-1dd5149fda9a",
+		"name": "Drift to the top of the twisting tower!",
+		"description": "Reach the goal at the top of the tower. Drifting not required, collecting all rings not required",
+		"image": "/assets/images/missions/2ea8ade6-36d1-4147-8edf-1dd5149fda9a.jpg",
+		"video": "/assets/videos/missions/2ea8ade6-36d1-4147-8edf-1dd5149fda9a.mp4",
+		"coordinates": [1615, 448]
 	}
 ]
