@@ -186,6 +186,13 @@
 		"name": "Slip by line after line of Rocky Wrenches!",
 		"description": "",
 		"image": "/assets/images/missions/4710c794-4df1-41be-9922-f71ab629df9d.jpg",
+		"coordinates": [1571.25, 422.5]
+	},
+	{
+		"id": "91b09955-9116-40b9-bcde-456a7736baf2",
+		"name": "Show your stuff in this Airship Fortress time trial!",
+		"description": "",
+		"image": "/assets/images/missions/91b09955-9116-40b9-bcde-456a7736baf2.jpg",
 		"coordinates": [1567, 427.5]
 	}
 ]
