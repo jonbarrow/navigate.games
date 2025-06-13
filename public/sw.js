@@ -38,8 +38,9 @@ self.addEventListener('fetch', (event) => {
 		// * Try network first, always
 		fetch(event.request.clone()).then((response) => {
 			if (response && response.status === 200 && response.type === 'basic') {
+				const responseToCache = response.clone();
 				caches.open(CACHE_NAME).then((cache) => {
-					cache.put(event.request, response.clone());
+					cache.put(event.request, responseToCache);
 				});
 			}
 
