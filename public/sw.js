@@ -24,34 +24,34 @@ const URLS_TO_CACHE = [
 	'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js'
 ];
 
-self.addEventListener('install', event => {
+self.addEventListener('install', (event) => {
 	event.waitUntil(
-		caches.open(CACHE_NAME).then(cache => {
+		caches.open(CACHE_NAME).then((cache) => {
 			return Promise.allSettled(URLS_TO_CACHE.map(url => cache.add(url)));
 		})
 	);
 });
 
-self.addEventListener('fetch', event => {
+self.addEventListener('fetch', (event) => {
 	event.respondWith(
-		caches.match(event.request).then(response => {
+		caches.match(event.request).then((response) => {
 			if (response) {
 				return response;
 			}
 
 			const fetchRequest = event.request.clone();
 
-			return fetch(fetchRequest).then(response => {
+			return fetch(fetchRequest).then((response) => {
 				if (!response || response.status !== 200 || response.type !== 'basic') {
 					return response;
 				}
 
-				caches.open(CACHE_NAME).then(cache => {
+				caches.open(CACHE_NAME).then((cache) => {
 					cache.put(event.request, response.clone());
 				});
 
 				return response;
-			}).catch(e => {
+			}).catch((e) => {
 				// * This should never happen, but handle it anyway
 				if (event.request.destination === 'document') {
 					return new Response(

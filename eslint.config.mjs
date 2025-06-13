@@ -9,5 +9,13 @@ export default [
 				...globals.node
 			}
 		}
+	},
+	{
+		files: ['public/sw.js'],
+		languageOptions: {
+			globals: {
+				...globals.serviceworker
+			}
+		}
 	}
 ];
