@@ -11,7 +11,7 @@ const PORT: number = parseInt(process.env.NAVIGATE_GAMES_PORT || '3000', 10);
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
 app.get('/', (_req: Request, res: Response) => {
-	res.redirect('/mario-kart-world'); // TODO - Expand this to other games?
+	res.sendFile(path.join(__dirname, '..', 'pages', 'home.html'));
 });
 
 app.get('/mario-kart-world', (_req: Request, res: Response) => {
