@@ -3,7 +3,6 @@
 
 const CACHE_NAME = 'mario-kart-world-map-v1';
 const URLS_TO_CACHE = [
-	'/',
 	'/mario-kart-world',
 	'/assets/images/map/base.webp',
 	'/assets/images/icons/p-switch.png',
