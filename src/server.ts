@@ -10,12 +10,12 @@ const PORT: number = parseInt(process.env.NAVIGATE_GAMES_PORT || '3000', 10);
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
-app.get('/', (_req: Request, res: Response) => {
-	res.sendFile(path.join(__dirname, '..', 'pages', 'home.html'));
+app.get('/', (_request: Request, response: Response) => {
+	response.sendFile(path.join(__dirname, '..', 'pages', 'home.html'));
 });
 
-app.get('/mario-kart-world', (_req: Request, res: Response) => {
-	res.sendFile(path.join(__dirname, '..', 'pages', 'mario-kart-world.html'));
+app.get('/mario-kart-world', (_request: Request, response: Response) => {
+	response.sendFile(path.join(__dirname, '..', 'pages', 'mario-kart-world.html'));
 });
 
 app.listen(PORT, () => {
