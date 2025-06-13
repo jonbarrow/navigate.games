@@ -344,6 +344,16 @@
 			.poi-icon.medallion {
 				background-image: url('/assets/images/icons/peach-medallion.png');
 			}
+
+			.poi-icon.yoshi-food {
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-image: url('/assets/images/icons/yoshi-food.webp');
+			}
+
+			.poi-icon.coin-stack {
+				background-image: url('/assets/images/icons/coin-stack.png');
+			}
 		</style>
 	</head>
 	<body>
@@ -396,19 +406,31 @@
 			const pois = {
 				missions: [],
 				panels: [],
-				medallions: []
+				medallions: [],
+				yoshi_foods: [],
+				coin_stacks: []
 			};
 
 			async function loadMarkerData() {
-				const [ missionsResponse, panelsResponse, medallionsResponse ] = await Promise.all([
+				const [
+					missionsResponse,
+					panelsResponse,
+					medallionsResponse,
+					yoshiFoodsResponse,
+					coinStacksResponse
+				] = await Promise.all([
 					fetch('/assets/data/pois/mario-kart-world/missions.json'),
 					fetch('/assets/data/pois/mario-kart-world/panels.json'),
-					fetch('/assets/data/pois/mario-kart-world/medallions.json')
+					fetch('/assets/data/pois/mario-kart-world/medallions.json'),
+					fetch('/assets/data/pois/mario-kart-world/yoshi-foods.json'),
+					fetch('/assets/data/pois/mario-kart-world/coin-stacks.json')
 				]);
 
 				pois.missions = await missionsResponse.json();
 				pois.panels = await panelsResponse.json();
 				pois.medallions = await medallionsResponse.json();
+				pois.yoshi_foods = await yoshiFoodsResponse.json();
+				pois.coin_stacks = await coinStacksResponse.json();
 			}
 		</script>
 
@@ -466,6 +488,18 @@
 					width: 63,
 					height: 69,
 					down_scale: 2
+				},
+				yoshi_food: {
+					url: '/assets/images/icons/yoshi-food.webp',
+					width: 488,
+					height: 402,
+					down_scale: 16
+				},
+				coin_stack: {
+					url: '/assets/images/icons/coin-stack.png',
+					width: 51,
+					height: 50,
+					down_scale: 2
 				}
 			};
 
@@ -475,6 +509,8 @@
 			const missionLayer = L.layerGroup();
 			const questionPanelLayer = L.layerGroup();
 			const peachMedallionLayer = L.layerGroup();
+			const yoshiFoodLayer = L.layerGroup();
+			const coinStackLayer = L.layerGroup();
 			const markers = {};
 			const completed = {
 				missions: 0,
@@ -493,6 +529,8 @@
 				'Missions': missionLayer,
 				'? Panels': questionPanelLayer,
 				'Peach Medallions': peachMedallionLayer,
+				'Yoshi Foods': yoshiFoodLayer,
+				'Coin Stacks': coinStackLayer,
 			}).addTo(map);
 
 			map.fitBounds(bounds);
@@ -513,6 +551,14 @@
 							</button>
 							<button class="poi-type-card" data-type="peach medallion" data-lat="${lat}" data-lng="${lng}">
 								<div class="poi-icon medallion"></div>
+							</button>
+						</div>
+						<div class="poi-type-grid">
+							<button class="poi-type-card" data-type="yoshi food" data-lat="${lat}" data-lng="${lng}">
+								<div class="poi-icon yoshi-food"></div>
+							</button>
+							<button class="poi-type-card" data-type="coin stack" data-lat="${lat}" data-lng="${lng}">
+								<div class="poi-icon coin-stack"></div>
 							</button>
 						</div>
 					</div>
@@ -549,9 +595,20 @@
 			}
 
 			function createMarker(poi, type) {
-				const layer = type === 'p_switch' ? missionLayer
-					: type === 'question_panel' ? questionPanelLayer
-					: peachMedallionLayer;
+				let layer;
+
+				if (type === 'p_switch') {
+					layer = missionLayer;
+				} else if (type === 'question_panel') {
+					layer = questionPanelLayer;
+				} else if (type === 'peach_medallion') {
+					layer = peachMedallionLayer;
+				} else if (type === 'yoshi_food') {
+					layer = yoshiFoodLayer;
+				} else {
+					layer = coinStackLayer;
+				}
+
 				const icon = iconData[type];
 				const marker = L.marker(poi.coordinates, {
 					icon:
@@ -581,6 +638,14 @@
 
 				pois.medallions.forEach(poi => {
 					markers[poi.id] = createMarker(poi, 'peach_medallion');
+				});
+
+				pois.yoshi_foods.forEach(poi => {
+					markers[poi.id] = createMarker(poi, 'yoshi_food');
+				});
+
+				pois.coin_stacks.forEach(poi => {
+					markers[poi.id] = createMarker(poi, 'coin_stack');
 				});
 			}
 
@@ -706,6 +771,8 @@
 				missionLayer.addTo(map);
 				questionPanelLayer.addTo(map);
 				peachMedallionLayer.addTo(map);
+				yoshiFoodLayer.addTo(map);
+				coinStackLayer.addTo(map);
 			});
 		</script>
 	</body>
