@@ -5,6 +5,8 @@ Open source interactive game map viewer for Mario Kart World
 ## Features
 
 - Track progress, no account needed
+- PWA support
+- Offline PWA
 - Hide POIs by type to reduce clutter
 - Click anywhere on the map to suggest new POIs
 - Each POI has (WIP, not all POIs will have all this data at the moment):
@@ -17,8 +19,9 @@ Open source interactive game map viewer for Mario Kart World
 
 The same general contribution styles/guidelines as found in the Pretendo Network project are in use here (https://github.com/PretendoNetwork/.github/tree/master/.github). As a small general overview:
 
-- Please keep commits focused. For example, if adding multiple POIs please do not create multiple POIs in a single commit
 - We use the [Conventional Commits](https://conventionalcommits.org) commit message syntax
+- We use the [Better Comments (Next)](https://github.com/edwinhuish/better-comments-next) comment syntax, for better readability in supported editors
+- Please keep commits focused. For example, if adding multiple POIs please do not create multiple POIs in a single commit
 - Please keep PRs focused. Multiple tasks should be in multiple PRs. Adding multiple POIs in a single PR is fine, within reason, however changes like style updates, bug fixes, POI updates, etc. should all be in different commits
 - Please make an issue request if you would like to work on a new feature. While PRs can be made regardless, and may be accepted, opening an issue to discuss a feature request before working on it saves time/effort on both ends and increases the chances of a feature being merged
 

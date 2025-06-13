@@ -762,7 +762,7 @@
 				infoPanel.classList.remove('active');
 			}
 
-			window.addEventListener('DOMContentLoaded', async () => {
+			window.addEventListener('load', async () => {
 				await loadMarkerData();
 				addMarkers();
 				initializeEvents();
@@ -773,6 +773,10 @@
 				peachMedallionLayer.addTo(map);
 				yoshiFoodLayer.addTo(map);
 				coinStackLayer.addTo(map);
+
+				if ('serviceWorker' in navigator) {
+					navigator.serviceWorker.register('/sw.js').catch(console.error);
+				}
 			});
 		</script>
 	</body>
