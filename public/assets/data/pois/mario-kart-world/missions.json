@@ -237,5 +237,11 @@
 		"description": "Perform careful wall jumps to hit the time-saving rings and reach the goal at the end.",
 		"image": "/assets/images/missions/63d2b2fc-9d8d-41e2-af10-4336904ed029.jpg",
 		"coordinates": [1505.25, 2245]
+	},
+	{
+		"id": "026afc41-32e7-4709-ac7e-737fe443253a",
+		"name": "Time your Mushroom to bust through to the goal!",
+		"image": "/assets/images/missions/026afc41-32e7-4709-ac7e-737fe443253a.jpg",
+		"coordinates": [1463.75, 2272]
 	}
 ]
