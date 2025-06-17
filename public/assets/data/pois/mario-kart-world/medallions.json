@@ -67,5 +67,13 @@
 		"image": "/assets/images/medallions/97e68b66-a02e-4963-9474-ee828007eff5.jpg",
 		"video": "/assets/videos/medallions/97e68b66-a02e-4963-9474-ee828007eff5.mov",
 		"coordinates": [1562, 424]
+	},
+	{
+		"id": "23b30e25-f587-491b-807a-8a031599f285",
+		"name": "Peach Medallion",
+		"image": "/assets/images/medallions/23b30e25-f587-491b-807a-8a031599f285.jpg",
+		"video": "/assets/videos/medallions/23b30e25-f587-491b-807a-8a031599f285.mov",
+		"reward": "/assets/images/stamps/23b30e25-f587-491b-807a-8a031599f285.png",
+		"coordinates": [2006.5, 1297.5]
 	}
 ]
