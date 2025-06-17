@@ -243,5 +243,55 @@
 		"name": "Time your Mushroom to bust through to the goal!",
 		"image": "/assets/images/missions/026afc41-32e7-4709-ac7e-737fe443253a.jpg",
 		"coordinates": [1463.75, 2272]
+	},
+	{
+		"id": "bfd45e96-6953-48e2-bbdf-010197fd3527",
+		"name": "Scope out the bazaar and scoop up the blue coins!",
+		"image": "/assets/images/missions/bfd45e96-6953-48e2-bbdf-010197fd3527.jpg",
+		"video": "/assets/videos/missions/bfd45e96-6953-48e2-bbdf-010197fd3527.mov",
+		"reward": "/assets/images/stamps/bfd45e96-6953-48e2-bbdf-010197fd3527.png",
+		"coordinates": [1171, 341.5]
+	},
+	{
+		"id": "29c86707-54a6-46f2-ab08-d59cf016e957",
+		"name": "Break through the Hammer Bros. blockade!",
+		"image": "/assets/images/missions/29c86707-54a6-46f2-ab08-d59cf016e957.jpg",
+		"coordinates": [1218, 350]
+	},
+	{
+		"id": "3b8a6651-cda0-47e7-a5ba-d69af3a2085b",
+		"name": "Overtake Shy Guys in an upriver race!",
+		"image": "/assets/images/missions/3b8a6651-cda0-47e7-a5ba-d69af3a2085b.jpg",
+		"coordinates": [1278, 304.5]
+	},
+	{
+		"id": "adff71ec-093d-4d84-a991-535218113e4c",
+		"name": "Ride geysers and shoot through rings to the goal!",
+		"image": "/assets/images/missions/adff71ec-093d-4d84-a991-535218113e4c.jpg",
+		"coordinates": [1750, 1016]
+	},
+	{
+		"id": "278e21e7-f669-44d9-bcec-2b9ce026485a",
+		"name": "Show everyone how to ride the wall!",
+		"image": "/assets/images/missions/278e21e7-f669-44d9-bcec-2b9ce026485a.jpg",
+		"coordinates": [1832, 1060]
+	},
+	{
+		"id": "9ac4eae2-b514-48dc-b91a-02262ab3755b",
+		"name": "Travel across the bridge, tricking all the way!",
+		"image": "/assets/images/missions/9ac4eae2-b514-48dc-b91a-02262ab3755b.jpg",
+		"coordinates": [1383.5, 446.5]
+	},
+	{
+		"id": "53275f1e-8715-4b50-9acd-369efc9ab6a6",
+		"name": "Cruise along the curving route to reach the goal!",
+		"image": "/assets/images/missions/53275f1e-8715-4b50-9acd-369efc9ab6a6.jpg",
+		"coordinates": [1463.75, 503]
+	},
+	{
+		"id": "cf57a5bd-f7ab-4523-8dfb-28d28ebeb920",
+		"name": "Wiggle past the Wigglers on your way to the goal!",
+		"image": "/assets/images/missions/cf57a5bd-f7ab-4523-8dfb-28d28ebeb920.jpg",
+		"coordinates": [1977, 1257.5]
 	}
 ]

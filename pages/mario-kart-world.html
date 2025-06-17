@@ -144,6 +144,16 @@
 				margin-bottom: 10px;
 			}
 
+			.poi-reward-container {
+				display: flex;
+				align-items: center;
+			}
+			.poi-reward-container .poi-reward {
+				width: 50px;
+				height: auto;
+				margin-left: 10px;
+			}
+
 			.poi-video {
 				width: 100%;
 				height: 300px;
@@ -742,12 +752,13 @@
 
 				let content = `<h3>${poi.name}</h3>`; // TODO - Recolor this based on type
 
-				if (poi.image) {
-					content += `<img src="${poi.image}" alt="${poi.id}" class="poi-image" onerror="style.display='none'">`;
-				}
-
-				if (poi.description) {
-					content += `<p>${poi.description}</p>`;
+				if (poi.reward) {
+					content += `
+						<div class="poi-reward-container">
+							<p>Stamp Reward:</p>
+							<img src="${poi.reward}" alt="${poi.id}" class="poi-reward" onerror="style.display='none'">
+						</div>
+					`;
 				}
 
 				content += `
@@ -756,6 +767,14 @@
 						<label for="completed-${poi.id}">Mark as completed</label>
 					</div>
 				`;
+
+				if (poi.image) {
+					content += `<img src="${poi.image}" alt="${poi.id}" class="poi-image" onerror="style.display='none'">`;
+				}
+
+				if (poi.description) {
+					content += `<p>${poi.description}</p>`;
+				}
 
 				if (poi.video) {
 					if (!poi.video.startsWith('/assets/videos/')) {
