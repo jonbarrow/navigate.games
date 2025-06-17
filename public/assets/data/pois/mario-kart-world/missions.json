@@ -209,5 +209,11 @@
 		"image": "/assets/images/missions/b8b7c1ae-47ea-4eae-8dc4-ff5485a091d7.jpg",
 		"video": "/assets/videos/missions/b8b7c1ae-47ea-4eae-8dc4-ff5485a091d7.mov",
 		"coordinates": [1388.4952993290096, 1391]
+	},
+	{
+		"id": "49a1364f-bd4e-4473-9661-af24c8053334",
+		"name": "Seek peace by climbing the falls!",
+		"image": "/assets/images/missions/49a1364f-bd4e-4473-9661-af24c8053334.jpg",
+		"coordinates": [1109, 1714.5]
 	}
 ]
