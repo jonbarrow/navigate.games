@@ -213,7 +213,15 @@
 	{
 		"id": "49a1364f-bd4e-4473-9661-af24c8053334",
 		"name": "Seek peace by climbing the falls!",
+		"description": "Use Dash Rings to ride up to the top of Cheep Cheep Falls.",
 		"image": "/assets/images/missions/49a1364f-bd4e-4473-9661-af24c8053334.jpg",
 		"coordinates": [1109, 1714.5]
+	},
+	{
+		"id": "2b1a71eb-3306-48f5-9ef5-6866ea583412",
+		"name": "Pursue zen by collecting blue coins!",
+		"description": "Drive through the karesansui in Cheep Cheep Falls to collect Blue Coins. Make sure to trick off the pole towards the end",
+		"image": "/assets/images/missions/2b1a71eb-3306-48f5-9ef5-6866ea583412.jpg",
+		"coordinates": [1153, 1640.5]
 	}
 ]
