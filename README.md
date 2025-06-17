@@ -15,6 +15,15 @@ Open source interactive game map viewer for Mario Kart World
 	- A description of what the POI task is (if applicable)
 	- POI reward information (if applicable, WIP)
 
+## Tracked points of interest:
+
+- P-Switch Missions
+- Peach Medallions
+- Question Mark Panels
+- Yoshi Foods
+- Coin Stacks
+- Nabbits
+
 ## Contributing (general)
 
 The same general contribution styles/guidelines as found in the Pretendo Network project are in use here (https://github.com/PretendoNetwork/.github/tree/master/.github). As a small general overview:
