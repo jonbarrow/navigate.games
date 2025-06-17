@@ -4,5 +4,11 @@
 		"name": "Question Mark Panel",
 		"image": "/assets/images/panels/848f9da9-e271-4dd7-9bff-3ca6d54c5791.jpg",
 		"coordinates": [1481.25, 2264.75]
+	},
+	{
+		"id": "26974f40-ce67-44f4-b362-8c2cf8f906c3",
+		"name": "Question Mark Panel",
+		"image": "/assets/images/panels/26974f40-ce67-44f4-b362-8c2cf8f906c3.jpg",
+		"coordinates": [1500.75, 2232.75]
 	}
 ]
