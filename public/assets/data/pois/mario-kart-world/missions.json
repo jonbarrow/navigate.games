@@ -220,8 +220,15 @@
 	{
 		"id": "2b1a71eb-3306-48f5-9ef5-6866ea583412",
 		"name": "Pursue zen by collecting blue coins!",
-		"description": "Drive through the karesansui in Cheep Cheep Falls to collect Blue Coins. Make sure to trick off the pole towards the end",
+		"description": "Drive through the karesansui in Cheep Cheep Falls to collect Blue Coins. Make sure to trick off the pole towards the end.",
 		"image": "/assets/images/missions/2b1a71eb-3306-48f5-9ef5-6866ea583412.jpg",
 		"coordinates": [1153, 1640.5]
+	},
+	{
+		"id": "7227b649-8a3b-40a8-8148-ef71c1de4b3d",
+		"name": "Reach the top of the rotating ice-cream cone!",
+		"description": "Use the nearby glide ramp and use the Clown Cars to fly over to the goal.",
+		"image": "/assets/images/missions/7227b649-8a3b-40a8-8148-ef71c1de4b3d.jpg",
+		"coordinates": [1474.5, 2253.25]
 	}
 ]
