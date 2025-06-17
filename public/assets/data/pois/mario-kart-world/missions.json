@@ -230,5 +230,12 @@
 		"description": "Use the nearby glide ramp and use the Clown Cars to fly over to the goal.",
 		"image": "/assets/images/missions/7227b649-8a3b-40a8-8148-ef71c1de4b3d.jpg",
 		"coordinates": [1474.5, 2253.25]
+	},
+	{
+		"id": "63d2b2fc-9d8d-41e2-af10-4336904ed029",
+		"name": "Perform a bold escape through the ice-cream ravine!",
+		"description": "Perform careful wall jumps to hit the time-saving rings and reach the goal at the end.",
+		"image": "/assets/images/missions/63d2b2fc-9d8d-41e2-af10-4336904ed029.jpg",
+		"coordinates": [1505.25, 2245]
 	}
 ]
