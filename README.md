@@ -5,6 +5,7 @@ Open source interactive game map viewer for Mario Kart World
 ## Features
 
 - Track progress, no account needed
+- See sticker rewards
 - PWA support
 - Offline PWA
 - Hide POIs by type to reduce clutter

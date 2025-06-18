@@ -201,7 +201,7 @@
 		"description": "Reach the goal at the top of the tower. Drifting not required, collecting all rings not required",
 		"image": "/assets/images/missions/2ea8ade6-36d1-4147-8edf-1dd5149fda9a.jpg",
 		"video": "/assets/videos/missions/2ea8ade6-36d1-4147-8edf-1dd5149fda9a.mp4",
-		"reward": "/assets/images/stamps/2ea8ade6-36d1-4147-8edf-1dd5149fda9a.png",
+		"reward": "/assets/images/stickers/2ea8ade6-36d1-4147-8edf-1dd5149fda9a.png",
 		"coordinates": [1615, 448]
 	},
 	{
@@ -209,7 +209,7 @@
 		"name": "Bounce up! Drop down! Grab blue coins!",
 		"image": "/assets/images/missions/b8b7c1ae-47ea-4eae-8dc4-ff5485a091d7.jpg",
 		"video": "/assets/videos/missions/b8b7c1ae-47ea-4eae-8dc4-ff5485a091d7.mov",
-		"reward": "/assets/images/stamps/b8b7c1ae-47ea-4eae-8dc4-ff5485a091d7.png",
+		"reward": "/assets/images/stickers/b8b7c1ae-47ea-4eae-8dc4-ff5485a091d7.png",
 		"coordinates": [1388.4952993290096, 1391]
 	},
 	{
@@ -251,7 +251,7 @@
 		"name": "Scope out the bazaar and scoop up the blue coins!",
 		"image": "/assets/images/missions/bfd45e96-6953-48e2-bbdf-010197fd3527.jpg",
 		"video": "/assets/videos/missions/bfd45e96-6953-48e2-bbdf-010197fd3527.mov",
-		"reward": "/assets/images/stamps/bfd45e96-6953-48e2-bbdf-010197fd3527.png",
+		"reward": "/assets/images/stickers/bfd45e96-6953-48e2-bbdf-010197fd3527.png",
 		"coordinates": [1171, 341.5]
 	},
 	{
