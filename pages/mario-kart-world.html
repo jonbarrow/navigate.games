@@ -189,6 +189,18 @@
 				font-weight: 500;
 			}
 
+			.dash-food-list {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+				gap: 1rem;
+				padding: 1rem;
+			}
+
+			.dash-food {
+				height: auto;
+				width: 100px;
+			}
+
 			.video-link {
 				display: inline-block;
 				margin-top: 10px;
@@ -771,6 +783,19 @@
 
 				if (poi.image) {
 					content += `<img src="${poi.image}" alt="${poi.id}" class="poi-image" onerror="style.display='none'">`;
+				}
+
+				if (poi.serves) {
+					content += `
+						<h3>Serves:</h3>
+						<div class="dash-food-list">
+					`;
+
+					for (const image of poi.serves) {
+						content += `<img class="dash-food" src="${image}" onerror="style.display='none'">`;
+					}
+
+					content += '</div>';
 				}
 
 				if (poi.description) {

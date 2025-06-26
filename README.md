@@ -19,9 +19,16 @@ Open source interactive game map viewer for Mario Kart World
 ## Tracked points of interest:
 
 - P-Switch Missions
+	- Includes the reward sticker (WIP)
+	- Includes a video guide (WIP)
 - Peach Medallions
+	- Includes the reward sticker (WIP)
+	- Includes a video guide (WIP)
 - Question Mark Panels
+	- Includes the reward sticker (WIP)
+	- Includes a video guide (WIP)
 - Yoshi Foods
+	- Includes what Dash Food types are served at each location (WIP)
 - Coin Stacks
 - Nabbits
 
@@ -68,3 +75,15 @@ npm run dev
 ```
 
 The server is now listening at https://localhost:3000. Set `NAVIGATE_GAMES_PORT` to change the port. `.env` files supported
+
+## Credits
+
+- World map: https://www.nintendo.com/jp/games/switch2/aaaaa/index.html
+- Yoshi Food icon: https://www.nintendo.com/jp/games/switch2/aaaaa/item-techniques/index.html
+- Dash food images: https://www.mariowiki.com/Dash_Food
+- Mission icon: In game screenshot
+- Peach Medallion icon: In game screenshot
+- Question mark panel icon: In game screenshot
+- Coin stack icon: In game screenshot
+- Nabbit icon: In game screenshot
+- Stickers: In game screenshot
