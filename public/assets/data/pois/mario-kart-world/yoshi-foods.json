@@ -12,5 +12,53 @@
 		"description": "Serves fried food.",
 		"image": "/assets/images/yoshi-foods/d896f149-85c7-4d41-baee-623fe2b9c708.jpg",
 		"coordinates": [1218.659927368164, 361.0332546234131]
+	},
+	{
+		"id": "09b59f92-f96b-48c6-a8ed-14dbff1dc7c0",
+		"name": "Yoshi Food",
+		"image": "/assets/images/yoshi-foods/09b59f92-f96b-48c6-a8ed-14dbff1dc7c0.jpg",
+		"coordinates": [1405, 1745]
+	},
+	{
+		"id": "1c285151-27ac-4aac-953e-8299d38e7ec1",
+		"name": "Yoshi Food",
+		"image": "/assets/images/yoshi-foods/1c285151-27ac-4aac-953e-8299d38e7ec1.jpg",
+		"coordinates": [1139, 1732]
+	},
+	{
+		"id": "315f2563-03da-4e38-839d-79eab684a98b",
+		"name": "Yoshi Food",
+		"image": "/assets/images/yoshi-foods/315f2563-03da-4e38-839d-79eab684a98b.jpg",
+		"coordinates": [1144, 1702]
+	},
+	{
+		"id": "2fc3f6da-c5ef-470f-ba63-e0916db8559b",
+		"name": "Yoshi Food",
+		"image": "/assets/images/yoshi-foods/2fc3f6da-c5ef-470f-ba63-e0916db8559b.jpg",
+		"coordinates": [987, 1667]
+	},
+	{
+		"id": "11c56990-0d51-432c-87c7-b4eb47927ee5",
+		"name": "Yoshi Food",
+		"image": "/assets/images/yoshi-foods/11c56990-0d51-432c-87c7-b4eb47927ee5.jpg",
+		"coordinates": [878, 1803]
+	},
+	{
+		"id": "dc647a12-d38a-44cc-8f3d-dd431c3250df",
+		"name": "Yoshi Food",
+		"image": "/assets/images/yoshi-foods/dc647a12-d38a-44cc-8f3d-dd431c3250df.jpg",
+		"coordinates": [901.5, 1979.5]
+	},
+	{
+		"id": "f91d8bf0-82ff-40a1-b308-f9cc8de92cc5",
+		"name": "Yoshi Food",
+		"image": "/assets/images/yoshi-foods/f91d8bf0-82ff-40a1-b308-f9cc8de92cc5.jpg",
+		"coordinates": [851.5, 1947.5]
+	},
+	{
+		"id": "39a70bc7-1a4f-418e-bd6a-62cfe39dfa04",
+		"name": "Yoshi Food",
+		"image": "/assets/images/yoshi-foods/39a70bc7-1a4f-418e-bd6a-62cfe39dfa04.jpg",
+		"coordinates": [928.5, 1982.5]
 	}
 ]
